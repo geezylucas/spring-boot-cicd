@@ -11,13 +11,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-      - name: Setup GCP Service Account
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
+      - id: auth
+        uses: google-github-actions/auth@v2
         with:
-          version: 'latest'
-          service_account_email: ${{ secrets.GCP_SA_EMAIL }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
 
       - name: Configure Docker
         run: |
