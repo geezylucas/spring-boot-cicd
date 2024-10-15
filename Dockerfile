@@ -10,7 +10,7 @@ WORKDIR /home/gradle/src
 RUN gradle bootJar --no-daemon
 
 # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
-FROM eclipse-temurin:17-jdk-alpine
+FROM gradle:jdk17-alpine
 
 RUN mkdir /app
 
