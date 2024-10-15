@@ -10,7 +10,7 @@ WORKDIR /home/gradle/src
 RUN gradle bootJar --no-daemon
 
 # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
-FROM gradle:jdk17-alpine
+FROM openjdk:17-jdk-slim
 
 RUN mkdir /app
 
