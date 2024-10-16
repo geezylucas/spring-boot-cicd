@@ -33,6 +33,7 @@ public class GreetingController {
                         .firstName(user.firstName())
                         .lastName(user.lastName())
                         .age(user.age())
+                        .email(user.email())
                         .createdAt(Timestamp.now())
                         .build())
                 .flatMap(userRepository::save);
