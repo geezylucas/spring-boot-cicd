@@ -9,6 +9,6 @@ public class GreetingController {
 
     @GetMapping("/greetings")
     public Mono<String> helloWorld() {
-        return Mono.just("Hello World!");
+        return Mono.just("Hola codigo facilito!");
     }
 }
